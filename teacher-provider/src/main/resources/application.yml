@@ -3,7 +3,7 @@ server:
 dubbo:
   application:
     #    name: site-service-boot-provider
-    name: student-provider
+    name: teacher-provider
   registry:
     address: zookeeper://192.168.43.136:2181
   protocol:

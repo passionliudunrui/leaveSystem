@@ -1,7 +1,9 @@
 package com.studentProvider.service.impl;
 
 import com.api.StudentService;
+import org.apache.dubbo.config.annotation.Service;
 
+@Service
 public class StudentServiceImpl implements StudentService {
     @Override
     public String login(Integer id, String password) {
@@ -20,7 +22,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public String toLeave(Integer id, String userName, Integer classId, String reason) {
-        return null;
+        return "okk";
     }
 
     @Override

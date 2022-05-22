@@ -5,16 +5,21 @@
 </head>
 <body>
 
-<form action="login" method="post">
-    你好
-    <label>account:</label><input name="id"/>
-    <br>
-    <label>password:</label><input name="password"/>
-    <br>
-    <label>student or teacher:</label><input name="choice"/>
-    <p></p>
-    <input type="submit" value="login">
-</form>
+    <form action="login" method="post">
+        <br>
+        <label>account:</label><input name="id"/>
+        <br>
+        <label>password:</label><input name="password"/>
+        <br>
+        <label>student or teacher:</label><input name="choice"/>
+        <p></p>
+        <input type="submit" value="login">
+    </form>
+
+    <form action="register" method="post">
+        <input type="submit" value="注册">
+
+    </form>
 
 </body>
 

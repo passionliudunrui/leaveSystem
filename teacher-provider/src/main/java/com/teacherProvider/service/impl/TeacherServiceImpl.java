@@ -1,7 +1,10 @@
 package com.teacherProvider.service.impl;
 
 import api.TeacherService;
+import org.apache.dubbo.config.annotation.Service;
 
+
+@Service
 public class TeacherServiceImpl implements TeacherService {
     @Override
     public String login(Integer id, String password) {
