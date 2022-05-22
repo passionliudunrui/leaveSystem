@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="student-interface" />
+        <module name="teacher-interface" />
+        <module name="MyTest" />
+        <module name="consumer2" />
+        <module name="consumer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="consumer" target="1.8" />
+      <module name="MyTest" target="1.8" />
+      <module name="StudentInterface" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-encoding utf-8" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MyTest" options="-parameters" />
+      <module name="StudentInterface" options="-parameters" />
+      <module name="consumer" options="-parameters" />
+      <module name="consumer2" options="-parameters" />
+      <module name="student-interface" options="" />
+      <module name="teacher-interface" options="" />
+    </option>
+  </component>
+</project>
