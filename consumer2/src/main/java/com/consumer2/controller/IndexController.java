@@ -29,10 +29,7 @@ public class IndexController {
      */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String toLogin(Login login){
-        System.out.println(login.getId());
-        System.out.println(login.getPassword());
-        System.out.println(login.getChoice());
-        System.out.println("111");
+        System.out.println(login);
 
         return "welcomeStudent";
     }
@@ -53,7 +50,6 @@ public class IndexController {
     public String viewResult(Integer id){
 
         System.out.println(id);
-        System.out.println("接收到请求");
 
         return "index";
 
@@ -62,11 +58,12 @@ public class IndexController {
     @RequestMapping(value = "/removeLeave",method = RequestMethod.POST)
     public String removeLeave(RemoveLeave removeLeave){
         System.out.println(removeLeave);
-        System.out.println("接收到请求");
 
         return "index";
 
     }
+
+
 
 
 }

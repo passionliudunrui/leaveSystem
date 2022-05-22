@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/consumer/pom.xml" />
         <option value="$PROJECT_DIR$/MyTest/pom.xml" />
         <option value="$PROJECT_DIR$/consumer2/pom.xml" />
+        <option value="$PROJECT_DIR$/student-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/teacher-provider/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

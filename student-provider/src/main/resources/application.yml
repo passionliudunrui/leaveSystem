@@ -1,0 +1,24 @@
+server:
+  port: 9001
+dubbo:
+  application:
+#    name: site-service-boot-provider
+    name: student-provider
+  registry:
+    address: zookeeper://192.168.43.136:2181
+  protocol:
+    name: dubbo
+    port: 20882
+
+mybatis:
+  #    mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath*:/mapper/*.xml
+  type-aliases-package: com.studentProvider.entity
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/leavesystem?useUnicode=true&&characterEncoding=UTF-8&&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
