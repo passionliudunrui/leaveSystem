@@ -14,13 +14,16 @@
 
     <form action="toRegister" method="post">
         <br>
-        <label>学号:</label><input name="id"/>
+        <label>账号:</label><input name="id"/>
         <br>
-        <label>姓名:</label><input name="password"/>
+        <label>姓名:</label><input name="userName"/>
         <br>
-        <label>班级:</label><input name="choice"/>
+        <label>班级:</label><input name="classId"/>
         <br>
-        <label>班级:</label><input name="choice"/>
+        <label>密码:</label><input name="password"/>
+        <br>
+        <label>student or teacher </label> <input name="choice">
+        <br>
         <input type="submit" value="toRegister">
     </form>
 

@@ -28,56 +28,56 @@ public class IndexController {
         return "login";
     }
 
-    /**
-     * 验证登录请求
-     * @param login
-     * @return
-     */
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String toLogin(Login login){
-        System.out.println(login);
-        if(login.getChoice().equals("student")){
-            return "welcomeStudent";
-        }
-        else if(login.getChoice().equals("teacher")){
-            return "welcomeTeacher";
-        }
-
-        return "login";
-    }
-
-    /**
-     * 处理学生的请求
-     */
-
-    @RequestMapping(value = "/toLeave",method = RequestMethod.POST)
-    public String toLeave(Leave leave){
-        System.out.println(leave);
-
-        String s = studentService.toLeave(leave.getId(), leave.getUserName(), leave.getClassId(), leave.getReason());
-
-        System.out.println(s);
-
-        return "index";
-
-    }
-
-    @RequestMapping(value = "/viewResult",method = RequestMethod.POST)
-    public String viewResult(Integer id){
-
-        System.out.println(id);
-
-        return "index";
-
-    }
-
-    @RequestMapping(value = "/removeLeave",method = RequestMethod.POST)
-    public String removeLeave(RemoveLeave removeLeave){
-        System.out.println(removeLeave);
-
-        return "index";
-
-    }
+//    /**
+//     * 验证登录请求
+//     * @param login
+//     * @return
+//     */
+//    @RequestMapping(value = "/login",method = RequestMethod.POST)
+//    public String toLogin(Login login){
+//        System.out.println(login);
+//        if(login.getChoice().equals("student")){
+//            return "welcomeStudent";
+//        }
+//        else if(login.getChoice().equals("teacher")){
+//            return "welcomeTeacher";
+//        }
+//
+//        return "login";
+//    }
+//
+//    /**
+//     * 处理学生的请求
+//     */
+//
+//    @RequestMapping(value = "/toLeave",method = RequestMethod.POST)
+//    public String toLeave(Leave leave){
+//        System.out.println(leave);
+//
+//        String s = studentService.toLeave(leave.getId(), leave.getUserName(), leave.getClassId(), leave.getReason());
+//
+//        System.out.println(s);
+//
+//        return "index";
+//
+//    }
+//
+//    @RequestMapping(value = "/viewResult",method = RequestMethod.POST)
+//    public String viewResult(Integer id){
+//
+//        System.out.println(id);
+//
+//        return "index";
+//
+//    }
+//
+//    @RequestMapping(value = "/removeLeave",method = RequestMethod.POST)
+//    public String removeLeave(RemoveLeave removeLeave){
+//        System.out.println(removeLeave);
+//
+//        return "index";
+//
+//    }
 
 
 

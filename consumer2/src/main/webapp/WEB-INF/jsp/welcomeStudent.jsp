@@ -12,7 +12,7 @@
 </head>
 <body>
 welcome student
-
+<br>
     1.请假,请填写表格
     <form action="toLeave" method="post">
         <label>学号:</label><input name="id"/>
@@ -42,6 +42,12 @@ welcome student
         <label>返回时间</label><input name="time"/>
         <br>
         <input type="submit" value="确认">
+    </form>
+    <br>
+
+    4.修改用户信息
+    <form action="updateInfo" method="post">
+        <input type="submit" value="修改">
     </form>
 
 

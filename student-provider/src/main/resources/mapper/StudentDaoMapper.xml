@@ -15,4 +15,9 @@
         from student;
     </select>
 
+    <insert id="insert" parameterType="Student">
+        insert into student(id,username,password,classid)
+        value (#{id},#{userName},#{password},#{classId});
+    </insert>
+
 </mapper>

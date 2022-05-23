@@ -7,5 +7,6 @@ import java.util.List;
 public interface StudentDao {
     Student check(Integer id,String password);
     List<Student>findAll();
+    int insert(Student student);
 
 }

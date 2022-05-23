@@ -13,5 +13,6 @@ public class Register {
     private String userName;
     private String password;
     private Integer classId;
+    private String choice;
 
 }
