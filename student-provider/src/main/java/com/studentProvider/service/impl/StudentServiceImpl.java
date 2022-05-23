@@ -1,7 +1,9 @@
 package com.studentProvider.service.impl;
 
 import com.api.StudentService;
+import com.studentProvider.dao.NewFormDao;
 import com.studentProvider.dao.StudentDao;
+import com.studentProvider.entity.NewForm;
 import com.studentProvider.entity.Student;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +14,18 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentDao studentDao;
 
+    @Autowired
+    private NewFormDao newFormDao;
+
     @Override
     public String login(Integer id, String password) {
-        return null;
+
+        Student student = studentDao.check(id, password);
+        if(student!=null){
+            return "ok";
+        }
+        return "false";
+
     }
 
     @Override
@@ -36,21 +47,39 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public String toLeave(Integer id, String userName, Integer classId, String reason) {
-        System.out.println(id);
-        System.out.println(userName);
-        System.out.println(classId);
-        System.out.println(reason);
-        System.out.println("受到消息");
-        return "okk";
+        NewForm newForm=new NewForm(id,classId,reason,0,0);
+        int insert = newFormDao.insert(newForm);
+        if(insert==1){
+            return "ok";
+        }
+        return "false";
+
     }
 
     @Override
-    public String viewResult() {
+    public String viewResult(Integer id) {
+        NewForm newForm = newFormDao.select(id);
+        if(newForm.getMystate()==0){
+
+            return "wait";
+        }
+        else if(newForm.getMystate()==1){
+            return "ok";
+        }
+        else if(newForm.getMystate()==2){
+            return "false";
+        }
+
         return null;
     }
 
     @Override
-    public String removeLeave() {
-        return null;
+    public String removeLeave(Integer studentId) {
+        int delete = newFormDao.delete(studentId);
+
+        if(delete==1){
+            return "ok";
+        }
+        return "false";
     }
 }

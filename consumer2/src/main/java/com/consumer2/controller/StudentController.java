@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class StudentController {
 
-
     @Reference
     private StudentService studentService;
+
 
     /**
      * 处理学生的请求
@@ -25,24 +25,45 @@ public class StudentController {
 
         String s = studentService.toLeave(leave.getId(), leave.getUserName(), leave.getClassId(), leave.getReason());
 
-        System.out.println(s);
+        if(s.equals("ok")){
+            return "leaveOk";
+        }
+        else if(s.equals("false")){
 
+            return "leaveFalse";
+        }
         return "index";
-
     }
 
     @RequestMapping(value = "/viewResult",method = RequestMethod.POST)
     public String viewResult(Integer id){
 
-        System.out.println(id);
+        String s = studentService.viewResult(id);
+        if(s.equals("ok")){
+            return "leaveOk2";
+
+        }
+        else if(s.equals("false")){
+            return "leaveFalse2";
+
+        }
+        else if(s.equals("wait")){
+            return "leaveFalse3";
+        }
 
         return "index";
-
     }
 
     @RequestMapping(value = "/removeLeave",method = RequestMethod.POST)
     public String removeLeave(RemoveLeave removeLeave){
-        System.out.println(removeLeave);
+        String s = studentService.removeLeave(removeLeave.getId());
+        if(s.equals("ok")){
+            return "removeLeaveOk";
+        }
+        else if(s.equals("false")){
+
+            return "removeLeaveFalse";
+        }
 
         return "index";
 

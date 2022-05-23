@@ -1,6 +1,6 @@
                 学生请假平台
 
-技术栈：springboot  dubbo  zookeeper  mybatis  redis
+技术栈：springboot  dubbo  zookeeper  mybatis mysql  redis  nigix rabbitmq
 
 开发进度：
     2022.5.21 16:40  完成mysql中的表设计
@@ -24,3 +24,4 @@
 (2)创建webapp 并且设定为web目录 还有arf
 (3)再configuration中设置working directory $MODULE_WORKING_DIR$
 
+state的状态      0学生请假但是老师未处理      1老师同意请假但是没有销假   如果拒绝请假直接存放到mysql中 result为0 拒绝    2已经销假  存放到mysql中 result为1
