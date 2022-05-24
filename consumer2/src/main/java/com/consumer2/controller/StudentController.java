@@ -68,4 +68,15 @@ public class StudentController {
         return "index";
 
     }
+
+
+    @RequestMapping("thanks")
+    public String  thanks(Integer id){
+
+        studentService.removeLeave(id);
+        System.out.println(id);
+        return "welcomeStudent";
+
+    }
+
 }

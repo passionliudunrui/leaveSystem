@@ -2,8 +2,10 @@ package com.studentProvider.service.impl;
 
 import com.api.StudentService;
 import com.studentProvider.dao.NewFormDao;
+import com.studentProvider.dao.OldFormDao;
 import com.studentProvider.dao.StudentDao;
 import com.studentProvider.entity.NewForm;
+import com.studentProvider.entity.OldForm;
 import com.studentProvider.entity.Student;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private NewFormDao newFormDao;
+
+    @Autowired
+    private OldFormDao oldFormDao;
 
     @Override
     public String login(Integer id, String password) {
@@ -53,7 +58,6 @@ public class StudentServiceImpl implements StudentService {
             return "ok";
         }
         return "false";
-
     }
 
     @Override
@@ -69,15 +73,25 @@ public class StudentServiceImpl implements StudentService {
         else if(newForm.getMystate()==2){
             return "false";
         }
-
         return null;
     }
 
     @Override
     public String removeLeave(Integer studentId) {
-        int delete = newFormDao.delete(studentId);
 
-        if(delete==1){
+        NewForm newForm=newFormDao.select(studentId);
+
+        OldForm oldForm=new OldForm();
+        oldForm.setStudentId(newForm.getStudentId());
+        oldForm.setClassId(newForm.getClassId());
+        oldForm.setMyresult(newForm.getMyresult());
+
+        int delete = newFormDao.delete(studentId);
+        int insert = oldFormDao.insert(oldForm);
+
+
+        if(delete+insert==2){
+
             return "ok";
         }
         return "false";

@@ -12,5 +12,9 @@
 </head>
 <body>
   老师拒绝了你的请假要求。
+  <form action="thanks" method="post">
+      <label>账号:</label><input name="id">
+      <input type="submit" value="确认">
+  </form>
 </body>
 </html>

@@ -42,8 +42,11 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public String handlerLeave(Integer studentId) {
-        int update = newFormDao.update(1, studentId);
+    public String handlerLeave(Integer studentId,Integer state) {
+
+
+
+        int update = newFormDao.update(state, studentId);
         if(update==1){
             return "ok";
         }
