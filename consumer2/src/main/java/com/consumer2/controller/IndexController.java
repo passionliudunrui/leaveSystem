@@ -26,6 +26,7 @@ public class IndexController {
         System.out.println("有人访问");
 
         return "login";
+
     }
 
 //    /**

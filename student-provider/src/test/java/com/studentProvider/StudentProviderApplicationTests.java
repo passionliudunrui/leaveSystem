@@ -30,28 +30,29 @@ class StudentProviderApplicationTests {
     void contextLoads() {
 
 
-//        List<Student> all = studentDao.findAll();
-//        System.out.println(all);
-//
-//        Student check = studentDao.check(12, "323");
-//        System.out.println(check);
+        List<Student> all = studentDao.findAll();
+        System.out.println(all);
 
-//        OldForm oldForm=new OldForm(12,12,2);
-//
-//        int insert = oldFormDao.insert(oldForm);
-//        System.out.println(insert);
-
-        NewForm newForm=new NewForm(345,23,"睡觉",0,0);
-        System.out.println(newForm);
-        int ans = newFormDao.insert(newForm);
-
-        System.out.println(ans);
+        Student check = studentDao.check(12, "323");
+        System.out.println(check);
 
         int update = newFormDao.update(1, 345);
         System.out.println(update);
 
         int delete = newFormDao.delete(345);
         System.out.println(delete);
+
+
+
+        OldForm oldForm=new OldForm(12,12,2);
+
+        int insert = oldFormDao.insert(oldForm);
+        System.out.println(insert);
+
+        NewForm newForm=new NewForm(345,23,"睡觉",0,0);
+        System.out.println(newForm);
+        int ans = newFormDao.insert(newForm);
+        System.out.println(ans);
 
     }
 
